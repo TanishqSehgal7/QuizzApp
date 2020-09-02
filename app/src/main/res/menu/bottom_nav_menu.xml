@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/Categories"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_home_24"
+        android:title="Categories"
+        app:cnb_iconColor="@color/Yellow"
+        app:cnb_iconTintMode="src_in"
+        app:cnb_textColor="@android:color/black" />
+
+
+    <item
+        android:id="@+id/my_scores"
+        android:enabled="true"
+        android:icon="@drawable/round_insights_black_18dp"
+        android:title="My Scores"
+        app:cnb_iconColor="@color/Pink"
+        app:cnb_iconTintMode="src_in"
+        app:cnb_textColor="@android:color/black" />
+
+
+    <item
+        android:id="@+id/settings"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_settings_24"
+        android:title="Settings"
+        app:cnb_iconColor="@color/Purple"
+        app:cnb_iconTintMode="src_in"
+        app:cnb_textColor="@android:color/black" />
+
+</menu>
