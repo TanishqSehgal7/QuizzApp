@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".MainActivity"
     android:orientation="vertical"
     android:layout_marginBottom="70dp">
@@ -17,7 +17,7 @@
             android:id="@+id/view2"
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:background="@color/BaseColor"
+            android:background="@drawable/corner_bg"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -37,16 +37,20 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp">
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/categoryRV"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:background="@color/White"
-        android:layout_marginStart="9dp"
-        android:layout_marginEnd="9dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view2" />
 
-
+    </ScrollView>
 </LinearLayout>

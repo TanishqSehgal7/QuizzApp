@@ -7,7 +7,7 @@
         android:enabled="true"
         android:icon="@drawable/ic_baseline_home_24"
         android:title="Categories"
-        app:cnb_iconColor="@color/Yellow"
+        app:cnb_iconColor="@color/Color2"
         app:cnb_iconTintMode="src_in"
         app:cnb_textColor="@android:color/black" />
 
@@ -15,7 +15,7 @@
     <item
         android:id="@+id/my_scores"
         android:enabled="true"
-        android:icon="@drawable/round_insights_black_18dp"
+        android:icon="@drawable/ic_baseline_assignment_24"
         android:title="My Scores"
         app:cnb_iconColor="@color/Pink"
         app:cnb_iconTintMode="src_in"
