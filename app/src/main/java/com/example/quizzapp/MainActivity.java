@@ -2,21 +2,18 @@ package com.example.quizzapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
+import com.example.quizzapp.Fragments.CategoryFragment;
+import com.example.quizzapp.Fragments.ScoresFragment;
+import com.example.quizzapp.Fragments.SettingsFragment;
 import com.ismaeldivita.chipnavigation.ChipNavigationBar;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
     ChipNavigationBar navView;
-    Fragment categoryFragment = new  CategoryFragment();
+    Fragment categoryFragment = new CategoryFragment();
     Fragment scoresFragment = new ScoresFragment();
     Fragment settingsFragment = new SettingsFragment();
 

@@ -9,11 +9,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".QuestionsActivity" />
+        <activity android:name=".Quiz.Politics"></activity>
+        <activity android:name=".Quiz.Sports" />
+        <activity android:name=".Quiz.Technology" />
+        <activity android:name=".Quiz.History" />
+        <activity android:name=".Quiz.GeneralKnowledge" />
+        <activity android:name=".Quiz.ArtAndLiterature" />
         <activity android:name=".MainActivity" />
         <activity android:name=".SplashSreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

@@ -1,16 +1,18 @@
-package com.example.quizzapp;
+package com.example.quizzapp.Fragments;
 
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.example.quizzapp.Adapter.CategoryRVAdapter;
+import com.example.quizzapp.Model.Category;
+import com.example.quizzapp.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -49,7 +51,7 @@ public class CategoryFragment extends Fragment {
 
         categoryList= new ArrayList<>();
 
-        categoryList.add(new Category("Art and Literature",R.drawable.artandliterature));
+        categoryList.add(new Category("Art and Literature", R.drawable.artandliterature));
 
         categoryList.add(new Category("General Knowledge",R.drawable.generalknowledge));
 
