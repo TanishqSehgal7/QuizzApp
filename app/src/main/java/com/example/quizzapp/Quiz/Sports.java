@@ -3,8 +3,10 @@ package com.example.quizzapp.Quiz;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
@@ -38,13 +40,14 @@ public class Sports extends AppCompatActivity {
     RadioButton r3;
     RadioButton r4;
     Button submit;
-    int total=1;
+    int total=0;
     int iterator=0;
     int correct,wrong=0;
     ArrayList<String> arrayList;
     DatabaseReference reference;
     String correctAns;
     Button start;
+    Dialog resultDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,7 +87,7 @@ public class Sports extends AppCompatActivity {
         start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Timer(30,timer);
+                Timer(60,timer);
                 iterator=0;
                 updateQuestion();
                 start.setVisibility(View.GONE);
@@ -93,9 +96,20 @@ public class Sports extends AppCompatActivity {
     }
 
     private void updateQuestion() {
+        total++;
         if (total >5) {
-// open result dialog
-
+            resultDialog=new Dialog(this);
+            resultDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+            resultDialog.setContentView(R.layout.result_dialog);
+            ImageView img=resultDialog.findViewById(R.id.dialogCategory);
+            TextView scoreQ=resultDialog.findViewById(R.id.score);
+            TextView correctQ=resultDialog.findViewById(R.id.correct);
+            TextView wrongQ=resultDialog.findViewById(R.id.wrong);
+            img.setImageResource(getIntent().getIntExtra("Category Image",R.drawable.sports));
+            correctQ.setText("No. of Correct Answers : "+ correct);
+            wrongQ.setText("No. of Wrong Answers : "+wrong);
+            scoreQ.setText("Your Score : "+ correct);
+            resultDialog.show();
 
         } else {
             DatabaseReference ref;
@@ -110,9 +124,8 @@ public class Sports extends AppCompatActivity {
                     r3.setText(dataSnapshot.child("option3").getValue().toString());
                     r4.setText(dataSnapshot.child("option4").getValue().toString());
                     correctAns = dataSnapshot.child("correct").getValue().toString();
-//                    score.setText(correct);
+
                     question_number.setText("Question: " + total+"/5");
-//                    score.setText("Score: "+ correct);
 
                     r1.setEnabled(true);
                     r2.setEnabled(true);
@@ -137,10 +150,8 @@ public class Sports extends AppCompatActivity {
                                     public void run() {
                                         r1.setBackgroundColor(Color.TRANSPARENT);
                                         iterator = iterator + 1;
-                                        total = total + 1;
                                         unselectSelectedOption();
                                         updateQuestion();
-//                                            question_number.setText(total);
                                     }
                                 }, 1500);
                             } else {
@@ -162,7 +173,6 @@ public class Sports extends AppCompatActivity {
                                         r3.setBackgroundColor(Color.TRANSPARENT);
                                         r4.setBackgroundColor(Color.TRANSPARENT);
                                         iterator++;
-                                        total++;
                                         unselectSelectedOption();
                                         updateQuestion();
                                     }
@@ -188,10 +198,8 @@ public class Sports extends AppCompatActivity {
                                     public void run() {
                                         r2.setBackgroundColor(Color.TRANSPARENT);
                                         iterator = iterator + 1;
-                                        total = total + 1;
                                         updateQuestion();
                                         unselectSelectedOption();
-//                                            question_number.setText(total);
                                     }
                                 }, 1500);
                             } else {
@@ -213,7 +221,6 @@ public class Sports extends AppCompatActivity {
                                         r3.setBackgroundColor(Color.TRANSPARENT);
                                         r4.setBackgroundColor(Color.TRANSPARENT);
                                         iterator++;
-                                        total++;
                                         unselectSelectedOption();
                                         updateQuestion();
                                     }
@@ -239,10 +246,8 @@ public class Sports extends AppCompatActivity {
                                     public void run() {
                                         r3.setBackgroundColor(Color.TRANSPARENT);
                                         iterator = iterator + 1;
-                                        total = total + 1;
                                         updateQuestion();
                                         unselectSelectedOption();
-//                                            question_number.setText(total);
                                     }
                                 }, 1500);
                             } else {
@@ -264,7 +269,7 @@ public class Sports extends AppCompatActivity {
                                         r3.setBackgroundColor(Color.TRANSPARENT);
                                         r4.setBackgroundColor(Color.TRANSPARENT);
                                         iterator++;
-                                        total++;
+//                                            total++;
                                         unselectSelectedOption();
                                         updateQuestion();
                                     }
@@ -291,10 +296,8 @@ public class Sports extends AppCompatActivity {
                                     public void run() {
                                         r4.setBackgroundColor(Color.TRANSPARENT);
                                         iterator = iterator + 1;
-                                        total = total + 1;
                                         updateQuestion();
                                         unselectSelectedOption();
-//                                                question_number.setText(total);
                                     }
                                 }, 1500);
                             } else {
@@ -316,7 +319,6 @@ public class Sports extends AppCompatActivity {
                                         r3.setBackgroundColor(Color.TRANSPARENT);
                                         r4.setBackgroundColor(Color.TRANSPARENT);
                                         iterator++;
-                                        total++;
                                         unselectSelectedOption();
                                         updateQuestion();
                                     }
@@ -355,7 +357,15 @@ public class Sports extends AppCompatActivity {
 
                 int seconds= (int) (milisUntilFinished/1000);
                 int minutes= seconds/60;
-                timer.setText(minutes+ ":" + seconds);
+                if (seconds<=60)
+                timer.setText("00"+ ":" + seconds);
+                else
+                    timer.setText(minutes+":"+seconds);
+
+                if (seconds<=5)
+                    timer.setTextColor(Color.RED);
+                else
+                    timer.setTextColor(Color.WHITE);
 
             }
 
@@ -382,7 +392,7 @@ public class Sports extends AppCompatActivity {
         correct=wrong=0;
         score.setText("Score: 0");
         unselectSelectedOption();
-        Timer(20,timer);
+        Timer(60,timer);
     }
 
 }

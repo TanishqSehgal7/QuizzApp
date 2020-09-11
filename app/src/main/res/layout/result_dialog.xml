@@ -1,19 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_gravity="center_vertical"
-    android:layout_marginEnd="50dp"
-    android:layout_marginStart="50dp">
+    android:layout_gravity="center_vertical">
 
     <androidx.cardview.widget.CardView
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_centerHorizontal="true"
         app:cardCornerRadius="2000dp"
         app:cardElevation="20dp"
         android:elevation="20dp"
@@ -32,50 +28,45 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="80dp"
-        android:background="@color/Yellow"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/dialog_bg"
         android:orientation="vertical"
         android:padding="5dp">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Total: "
-            android:textSize="20sp"
-            android:textColor="@color/Black"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="100dp"/>
 
         <TextView
+            android:id="@+id/score"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Score: "
             android:textSize="20sp"
-            android:layout_marginStart="20dp"
+            android:layout_marginStart="10dp"
             android:textColor="@color/Black"
-            android:layout_marginTop="20dp"/>
+            android:layout_marginTop="110dp"/>
 
         <TextView
+            android:id="@+id/correct"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
             android:text="Correct: "
             android:textSize="20sp"
-            android:layout_marginStart="20dp"
+            android:layout_marginStart="10dp"
             android:textColor="@color/Black"
             android:layout_marginTop="20dp"/>
 
         <TextView
+            android:id="@+id/wrong"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
             android:text="Wrong: "
             android:textSize="20sp"
-            android:layout_marginStart="20dp"
+            android:layout_marginStart="10dp"
             android:textColor="@color/Black"
             android:padding="2dp"
             android:layout_marginTop="20dp"/>
@@ -84,13 +75,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:cardCornerRadius="20dp"
-            android:layout_marginTop="20dp">
+            android:layout_marginTop="20dp"
+            android:background="@color/White">
 
-            <Button
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="CLOSE"
                 android:textSize="20sp"
+                android:textAlignment="center"
+                android:padding="5dp"
+                android:textColor="@color/Black"
                 android:background="@color/White"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"/>
@@ -99,4 +94,4 @@
 
     </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
