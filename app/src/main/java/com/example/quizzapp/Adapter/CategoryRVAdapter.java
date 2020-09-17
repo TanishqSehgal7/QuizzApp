@@ -97,10 +97,6 @@ public class CategoryRVAdapter extends RecyclerView.Adapter<CategoryRVAdapter.Ca
                 }
             }
         });
-
-        Random rnd = new Random();
-        int color = Color.argb(255, rnd.nextInt(256), rnd.nextInt(256), rnd.nextInt(256));
-        holder.category_name.setBackgroundColor(color);
     }
 
     @Override
