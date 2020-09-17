@@ -17,7 +17,6 @@ import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.quizzapp.R;
 import com.google.firebase.database.DataSnapshot;
@@ -28,7 +27,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class Politics extends AppCompatActivity {
+public class Geography extends AppCompatActivity {
 
     ImageView category_image;
     TextView timer;
@@ -54,7 +53,7 @@ public class Politics extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_politics);
+        setContentView(R.layout.activity_geography);
 
         category_image=findViewById(R.id.Imagecategory);
         final Intent intent= getIntent();
@@ -133,7 +132,7 @@ public class Politics extends AppCompatActivity {
 
         } else {
             DatabaseReference ref;
-            ref=reference.child("Politics").child(arrayList.get(iterator));
+            ref=reference.child("Geography").child(arrayList.get(iterator));
             ref.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {

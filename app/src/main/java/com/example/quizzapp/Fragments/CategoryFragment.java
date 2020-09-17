@@ -63,6 +63,8 @@ public class CategoryFragment extends Fragment {
 
         categoryList.add(new Category("Politics",R.drawable.politics));
 
+        categoryList.add(new Category("Geograohy",R.drawable.geography));
+
     }
 
     @Override

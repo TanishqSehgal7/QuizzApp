@@ -3,6 +3,7 @@ package com.example.quizzapp.Adapter;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.quizzapp.Model.Category;
 import com.example.quizzapp.Quiz.GeneralKnowledge;
+import com.example.quizzapp.Quiz.Geography;
 import com.example.quizzapp.Quiz.History;
 import com.example.quizzapp.Quiz.Politics;
 import com.example.quizzapp.Quiz.ArtAndLiterature;
@@ -25,6 +27,7 @@ import com.example.quizzapp.Quiz.Technology;
 import com.example.quizzapp.R;
 
 import java.util.List;
+import java.util.Random;
 
 public class CategoryRVAdapter extends RecyclerView.Adapter<CategoryRVAdapter.CategoryViewHolder> {
 
@@ -80,14 +83,24 @@ public class CategoryRVAdapter extends RecyclerView.Adapter<CategoryRVAdapter.Ca
                     intent.putExtra("Category Image", mData.get(position).getCategoryPhoto());
                     ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation((Activity) mcontext, holder.category_image, ViewCompat.getTransitionName(holder.category_image));
                     mcontext.startActivity(intent, options.toBundle());
-                } else {
+                } else if (position==5){
                     Intent intent = new Intent(mcontext, Politics.class);
+                    intent.putExtra("Category Image", mData.get(position).getCategoryPhoto());
+                    ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation((Activity) mcontext, holder.category_image, ViewCompat.getTransitionName(holder.category_image));
+                    mcontext.startActivity(intent, options.toBundle());
+                }
+                else if (position==6){
+                    Intent intent = new Intent(mcontext, Geography.class);
                     intent.putExtra("Category Image", mData.get(position).getCategoryPhoto());
                     ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation((Activity) mcontext, holder.category_image, ViewCompat.getTransitionName(holder.category_image));
                     mcontext.startActivity(intent, options.toBundle());
                 }
             }
         });
+
+        Random rnd = new Random();
+        int color = Color.argb(255, rnd.nextInt(256), rnd.nextInt(256), rnd.nextInt(256));
+        holder.category_name.setBackgroundColor(color);
     }
 
     @Override

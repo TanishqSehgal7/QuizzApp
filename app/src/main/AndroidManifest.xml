@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Quiz.Politics"></activity>
+        <activity android:name=".Quiz.Geography"></activity>
+        <activity android:name=".Quiz.Politics" />
         <activity android:name=".Quiz.Sports" />
         <activity android:name=".Quiz.Technology" />
         <activity android:name=".Quiz.History" />

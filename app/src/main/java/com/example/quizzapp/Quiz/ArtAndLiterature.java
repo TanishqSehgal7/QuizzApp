@@ -54,6 +54,7 @@ public class ArtAndLiterature extends AppCompatActivity {
     String correctAns;
     Button start;
     Dialog resultDialog;
+    CountDownTimer timeCount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,10 +93,16 @@ public class ArtAndLiterature extends AppCompatActivity {
         start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Timer(60,timer);
+                Timer(30,timer);
+                total=0;
+                correct=0;
+                wrong=0;
+                score.setText("Score: 0");
+                question_number.setText("Question : 1/x");
                 iterator=0;
                 updateQuestion();
-                start.setVisibility(View.GONE);
+//                start.setVisibility(View.GONE);
+                start.setEnabled(false);
             }
         });
     }
@@ -110,11 +117,24 @@ public class ArtAndLiterature extends AppCompatActivity {
             TextView scoreQ=resultDialog.findViewById(R.id.score);
             TextView correctQ=resultDialog.findViewById(R.id.correct);
             TextView wrongQ=resultDialog.findViewById(R.id.wrong);
+            TextView close= resultDialog.findViewById(R.id.close);
             img.setImageResource(getIntent().getIntExtra("Category Image",R.drawable.artandliterature));
             correctQ.setText("No. of Correct Answers : "+ correct);
             wrongQ.setText("No. of Wrong Answers : "+wrong);
             scoreQ.setText("Your Score : "+ correct);
             resultDialog.show();
+
+            close.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    resultDialog.dismiss();
+                }
+            });
+           start.setText("Restart");
+           start.setEnabled(true);
+
+           timeCount.cancel();
+           timer.setText("00:00");
 
         } else {
             DatabaseReference ref;
@@ -353,14 +373,21 @@ public class ArtAndLiterature extends AppCompatActivity {
         }
     }
 
-    public void Timer(int seconds, final TextView timer){
-        new CountDownTimer(seconds*1000 + 1000, 1000){
+    public void Timer(final int seconds, final TextView timer){
+       timeCount= new CountDownTimer(seconds*1000 + 1000, 1000){
 
             @Override
             public void onTick(long milisUntilFinished) {
 
                 int seconds= (int) (milisUntilFinished/1000);
                 int minutes= seconds/60;
+
+                if (total>5){
+                    seconds=0;
+                    timer.setText("00"+":"+seconds);
+                    unselectSelectedOption();
+                }
+
                 if (seconds<=60)
                     timer.setText("00"+ ":" + seconds);
                 else
