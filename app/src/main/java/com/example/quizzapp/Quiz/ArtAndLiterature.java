@@ -22,6 +22,8 @@ import android.widget.Toast;
 
 import com.example.quizzapp.Model.QuestionModel;
 import com.example.quizzapp.R;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -45,16 +47,18 @@ public class ArtAndLiterature extends AppCompatActivity {
     RadioButton r2;
     RadioButton r3;
     RadioButton r4;
-    Button submit;
+//    Button submit;
     int total=0;
     int iterator=0;
     int correct,wrong=0;
     ArrayList<String> arrayList;
     DatabaseReference reference;
+    DatabaseReference reference_score;
     String correctAns;
     Button start;
     Dialog resultDialog;
     CountDownTimer timeCount;
+    String category_name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,6 +67,9 @@ public class ArtAndLiterature extends AppCompatActivity {
 
         category_image=findViewById(R.id.Imagecategory);
         final Intent intent= getIntent();
+        Bundle extras=intent.getExtras();
+        if (extras!=null)
+            category_name=extras.getString("Category Name");
         category_image.setImageResource(intent.getIntExtra("Category Image",R.drawable.artandliterature));
 
         timer= findViewById(R.id.textView2);
@@ -74,7 +81,7 @@ public class ArtAndLiterature extends AppCompatActivity {
         r2=findViewById(R.id.option2);
         r3=findViewById(R.id.option3);
         r4=findViewById(R.id.option4);
-        submit=findViewById(R.id.submit);
+//        submit=findViewById(R.id.submit);
         start=findViewById(R.id.startQuiz);
 
 
@@ -85,6 +92,7 @@ public class ArtAndLiterature extends AppCompatActivity {
         arrayList.add("Ques4");
         arrayList.add("Ques5");
         reference= FirebaseDatabase.getInstance().getReference().child("CATEGORIES");
+        reference_score=FirebaseDatabase.getInstance().getReference().child("Score").child("Art and Literature");
 
         r1.setEnabled(false);
         r2.setEnabled(false);
@@ -122,6 +130,19 @@ public class ArtAndLiterature extends AppCompatActivity {
             correctQ.setText("No. of Correct Answers : "+ correct);
             wrongQ.setText("No. of Wrong Answers : "+wrong);
             scoreQ.setText("Your Score : "+ correct);
+            getIntent().putExtra("Total Score",correct);
+            getIntent().putExtra("Category Name",category_name);
+            getIntent().putExtra("Category Image",R.drawable.artandliterature);
+            reference_score.setValue(correct).addOnCompleteListener(new OnCompleteListener<Void>() {
+                @Override
+                public void onComplete(@NonNull Task<Void> task) {
+                    if (task.isSuccessful()){
+                        Toast.makeText(ArtAndLiterature.this,"Score Saved",Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(ArtAndLiterature.this,"Could'nt Save the Score",Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
             resultDialog.show();
 
             close.setOnClickListener(new View.OnClickListener() {

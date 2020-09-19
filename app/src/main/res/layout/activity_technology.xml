@@ -83,7 +83,7 @@
         android:id="@+id/cardView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="220dp"
+        android:layout_marginTop="260dp"
         android:elevation="20dp"
         app:cardCornerRadius="20dp"
         app:cardElevation="20dp"
@@ -161,26 +161,26 @@
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView2"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        app:cardCornerRadius="30dp"
-        android:clickable="true"
-        android:focusable="true">
+<!--    <androidx.cardview.widget.CardView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/cardView2"-->
+<!--        android:layout_marginStart="20dp"-->
+<!--        android:layout_marginEnd="20dp"-->
+<!--        app:cardCornerRadius="30dp"-->
+<!--        android:clickable="true"-->
+<!--        android:focusable="true">-->
 
-        <Button
-            android:id="@+id/submit"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="SUBMIT"
-            android:background="#e5e5e5"
-            android:textSize="24sp"
-            android:foreground="?android:attr/selectableItemBackground"/>
+<!--        <Button-->
+<!--            android:id="@+id/submit"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="SUBMIT"-->
+<!--            android:background="#e5e5e5"-->
+<!--            android:textSize="24sp"-->
+<!--            android:foreground="?android:attr/selectableItemBackground"/>-->
 
-    </androidx.cardview.widget.CardView>
+<!--    </androidx.cardview.widget.CardView>-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

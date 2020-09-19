@@ -61,37 +61,44 @@ public class CategoryRVAdapter extends RecyclerView.Adapter<CategoryRVAdapter.Ca
                 if (position==0) {
                     Intent intent = new Intent(mcontext, ArtAndLiterature.class);
                     intent.putExtra("Category Image", mData.get(position).getCategoryPhoto());
+                    intent.putExtra("Category Name", mData.get(position).getCategoryName());
                     ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation((Activity) mcontext, holder.category_image, ViewCompat.getTransitionName(holder.category_image));
                     mcontext.startActivity(intent, options.toBundle());
                 } else if (position==1){
                     Intent intent = new Intent(mcontext, GeneralKnowledge.class);
                     intent.putExtra("Category Image", mData.get(position).getCategoryPhoto());
+                    intent.putExtra("Category Name", mData.get(position).getCategoryName());
                     ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation((Activity) mcontext, holder.category_image, ViewCompat.getTransitionName(holder.category_image));
                     mcontext.startActivity(intent, options.toBundle());
                 } else if (position==2){
                     Intent intent = new Intent(mcontext, History.class);
                     intent.putExtra("Category Image", mData.get(position).getCategoryPhoto());
+                    intent.putExtra("Category Name", mData.get(position).getCategoryName());
                     ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation((Activity) mcontext, holder.category_image, ViewCompat.getTransitionName(holder.category_image));
                     mcontext.startActivity(intent, options.toBundle());
                 } else if (position==3){
                     Intent intent = new Intent(mcontext, Technology.class);
                     intent.putExtra("Category Image", mData.get(position).getCategoryPhoto());
+                    intent.putExtra("Category Name", mData.get(position).getCategoryName());
                     ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation((Activity) mcontext, holder.category_image, ViewCompat.getTransitionName(holder.category_image));
                     mcontext.startActivity(intent, options.toBundle());
                 } else if (position==4){
                     Intent intent = new Intent(mcontext, Sports.class);
                     intent.putExtra("Category Image", mData.get(position).getCategoryPhoto());
+                    intent.putExtra("Category Name", mData.get(position).getCategoryName());
                     ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation((Activity) mcontext, holder.category_image, ViewCompat.getTransitionName(holder.category_image));
                     mcontext.startActivity(intent, options.toBundle());
                 } else if (position==5){
                     Intent intent = new Intent(mcontext, Politics.class);
                     intent.putExtra("Category Image", mData.get(position).getCategoryPhoto());
+                    intent.putExtra("Category Name", mData.get(position).getCategoryName());
                     ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation((Activity) mcontext, holder.category_image, ViewCompat.getTransitionName(holder.category_image));
                     mcontext.startActivity(intent, options.toBundle());
                 }
                 else if (position==6){
                     Intent intent = new Intent(mcontext, Geography.class);
                     intent.putExtra("Category Image", mData.get(position).getCategoryPhoto());
+                    intent.putExtra("Category Name", mData.get(position).getCategoryName());
                     ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation((Activity) mcontext, holder.category_image, ViewCompat.getTransitionName(holder.category_image));
                     mcontext.startActivity(intent, options.toBundle());
                 }

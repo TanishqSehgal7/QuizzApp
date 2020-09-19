@@ -9,6 +9,7 @@
     <!-- TODO: Update blank fragment layout -->
 
     <LinearLayout
+        android:id="@+id/about"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -43,7 +44,8 @@
         android:orientation="horizontal"
         android:padding="20dp"
         android:foreground="?android:attr/selectableItemBackground"
-        android:clickable="true">
+        android:clickable="true"
+        android:id="@+id/linkedin">
 
         <ImageView
             android:layout_width="30dp"
@@ -66,29 +68,29 @@
         android:layout_height="2sp"
         android:background="@drawable/grey_gradient"/>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="20dp"
-        android:foreground="?android:attr/selectableItemBackground"
-        android:clickable="true">
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:padding="20dp"-->
+<!--        android:foreground="?android:attr/selectableItemBackground"-->
+<!--        android:clickable="true">-->
 
-        <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_gravity="center_vertical"
-            android:src="@drawable/ic_baseline_color_lens_24"
-            android:layout_marginStart="5dp" />
+<!--        <ImageView-->
+<!--            android:layout_width="30dp"-->
+<!--            android:layout_height="30dp"-->
+<!--            android:layout_gravity="center_vertical"-->
+<!--            android:src="@drawable/ic_baseline_color_lens_24"-->
+<!--            android:layout_marginStart="5dp" />-->
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Dark Mode"
-            android:textSize="24sp"
-            android:layout_marginStart="10dp" />
+<!--        <TextView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Dark Mode"-->
+<!--            android:textSize="24sp"-->
+<!--            android:layout_marginStart="10dp" />-->
 
-    </LinearLayout>
+<!--    </LinearLayout>-->
 
     <View
         android:layout_width="match_parent"
@@ -101,7 +103,8 @@
         android:orientation="horizontal"
         android:padding="20dp"
         android:foreground="?android:attr/selectableItemBackground"
-        android:clickable="true">
+        android:clickable="true"
+        android:id="@+id/email">
 
         <ImageView
             android:layout_width="30dp"
