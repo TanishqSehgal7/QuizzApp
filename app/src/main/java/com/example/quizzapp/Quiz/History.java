@@ -42,7 +42,6 @@ public class History extends AppCompatActivity {
     RadioButton r2;
     RadioButton r3;
     RadioButton r4;
-//    Button submit;
     int total=0;
     int iterator=0;
     int correct,wrong=0;
@@ -58,7 +57,7 @@ public class History extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_history);
+        setContentView(R.layout.activity_geography);
 
         category_image=findViewById(R.id.Imagecategory);
         final Intent intent= getIntent();
@@ -76,7 +75,6 @@ public class History extends AppCompatActivity {
         r2=findViewById(R.id.option2);
         r3=findViewById(R.id.option3);
         r4=findViewById(R.id.option4);
-//        submit=findViewById(R.id.submit);
         start=findViewById(R.id.startQuiz);
 
 
@@ -88,7 +86,6 @@ public class History extends AppCompatActivity {
         arrayList.add("Ques5");
         reference= FirebaseDatabase.getInstance().getReference().child("CATEGORIES");
         reference_score=FirebaseDatabase.getInstance().getReference().child("Score").child("History");
-
 
         r1.setEnabled(false);
         r2.setEnabled(false);
@@ -105,7 +102,6 @@ public class History extends AppCompatActivity {
                 question_number.setText("Question : 1/x");
                 iterator=0;
                 updateQuestion();
-//                start.setVisibility(View.GONE);
                 start.setEnabled(false);
             }
         });
@@ -421,6 +417,7 @@ public class History extends AppCompatActivity {
                 unselectSelectedOption();
                 start.setText("Restart");
                 start.setVisibility(View.VISIBLE);
+                start.setEnabled(true);
                 start.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -440,4 +437,5 @@ public class History extends AppCompatActivity {
         unselectSelectedOption();
         Timer(60,timer);
     }
+
 }

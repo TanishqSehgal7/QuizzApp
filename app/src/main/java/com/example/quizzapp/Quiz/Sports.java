@@ -42,10 +42,10 @@ public class Sports extends AppCompatActivity {
     RadioButton r2;
     RadioButton r3;
     RadioButton r4;
-//    Button submit;
     int total=0;
     int iterator=0;
-    int correct,wrong=0;
+    int correct=0;
+    int wrong=0;
     ArrayList<String> arrayList;
     DatabaseReference reference;
     DatabaseReference reference_score;
@@ -76,7 +76,6 @@ public class Sports extends AppCompatActivity {
         r2=findViewById(R.id.option2);
         r3=findViewById(R.id.option3);
         r4=findViewById(R.id.option4);
-//        submit=findViewById(R.id.submit);
         start=findViewById(R.id.startQuiz);
 
 
@@ -87,7 +86,7 @@ public class Sports extends AppCompatActivity {
         arrayList.add("Ques4");
         arrayList.add("Ques5");
         reference= FirebaseDatabase.getInstance().getReference().child("CATEGORIES");
-        reference_score=FirebaseDatabase.getInstance().getReference().child("Sports");
+        reference_score=FirebaseDatabase.getInstance().getReference().child("Score").child("Sports");
 
         r1.setEnabled(false);
         r2.setEnabled(false);
@@ -100,11 +99,10 @@ public class Sports extends AppCompatActivity {
                 total=0;
                 correct=0;
                 wrong=0;
-                score.setText("Score: 0");
                 question_number.setText("Question : 1/x");
+                score.setText("Score: 0");
                 iterator=0;
                 updateQuestion();
-//                start.setVisibility(View.GONE);
                 start.setEnabled(false);
             }
         });
@@ -125,7 +123,6 @@ public class Sports extends AppCompatActivity {
             correctQ.setText("No. of Correct Answers : "+ correct);
             wrongQ.setText("No. of Wrong Answers : "+wrong);
             scoreQ.setText("Your Score : "+ correct);
-            resultDialog.show();
             getIntent().putExtra("Total Score",correct);
             getIntent().putExtra("Category Name",category_name);
             getIntent().putExtra("Category Image",R.drawable.sports);
@@ -139,6 +136,8 @@ public class Sports extends AppCompatActivity {
                     }
                 }
             });
+            resultDialog.show();
+
             close.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -419,6 +418,7 @@ public class Sports extends AppCompatActivity {
                 unselectSelectedOption();
                 start.setText("Restart");
                 start.setVisibility(View.VISIBLE);
+                start.setEnabled(true);
                 start.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -438,4 +438,5 @@ public class Sports extends AppCompatActivity {
         unselectSelectedOption();
         Timer(60,timer);
     }
+
 }

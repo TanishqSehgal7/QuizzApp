@@ -42,7 +42,6 @@ public class Politics extends AppCompatActivity {
     RadioButton r2;
     RadioButton r3;
     RadioButton r4;
-//    Button submit;
     int total=0;
     int iterator=0;
     int correct,wrong=0;
@@ -76,8 +75,8 @@ public class Politics extends AppCompatActivity {
         r2=findViewById(R.id.option2);
         r3=findViewById(R.id.option3);
         r4=findViewById(R.id.option4);
-//        submit=findViewById(R.id.submit);
         start=findViewById(R.id.startQuiz);
+
 
         arrayList= new ArrayList<>();
         arrayList.add("Ques1");
@@ -103,7 +102,6 @@ public class Politics extends AppCompatActivity {
                 question_number.setText("Question : 1/x");
                 iterator=0;
                 updateQuestion();
-//                start.setVisibility(View.GONE);
                 start.setEnabled(false);
             }
         });
@@ -419,6 +417,7 @@ public class Politics extends AppCompatActivity {
                 unselectSelectedOption();
                 start.setText("Restart");
                 start.setVisibility(View.VISIBLE);
+                start.setEnabled(true);
                 start.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -438,4 +437,5 @@ public class Politics extends AppCompatActivity {
         unselectSelectedOption();
         Timer(60,timer);
     }
+
 }

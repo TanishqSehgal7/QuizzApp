@@ -42,7 +42,6 @@ public class GeneralKnowledge extends AppCompatActivity {
     RadioButton r2;
     RadioButton r3;
     RadioButton r4;
-//    Button submit;
     int total=0;
     int iterator=0;
     int correct,wrong=0;
@@ -67,7 +66,6 @@ public class GeneralKnowledge extends AppCompatActivity {
             category_name=extras.getString("Category Name");
         category_image.setImageResource(intent.getIntExtra("Category Image",R.drawable.generalknowledge));
 
-
         timer= findViewById(R.id.textView2);
         score=findViewById(R.id.score);
         question_number=findViewById(R.id.quesNo);
@@ -77,7 +75,6 @@ public class GeneralKnowledge extends AppCompatActivity {
         r2=findViewById(R.id.option2);
         r3=findViewById(R.id.option3);
         r4=findViewById(R.id.option4);
-//        submit=findViewById(R.id.submit);
         start=findViewById(R.id.startQuiz);
 
 
@@ -105,7 +102,6 @@ public class GeneralKnowledge extends AppCompatActivity {
                 question_number.setText("Question : 1/x");
                 iterator=0;
                 updateQuestion();
-//                start.setVisibility(View.GONE);
                 start.setEnabled(false);
             }
         });
@@ -164,7 +160,7 @@ public class GeneralKnowledge extends AppCompatActivity {
                     r1.setText(dataSnapshot.child("option1").getValue().toString());
                     r2.setText(dataSnapshot.child("option2").getValue().toString());
                     r3.setText(dataSnapshot.child("option3").getValue().toString());
-                    r4.setText(dataSnapshot.child("option4").getValue().toString());
+//                    r4.setText(dataSnapshot.child("option4").getValue().toString());
                     correctAns = dataSnapshot.child("correct").getValue().toString();
 
                     question_number.setText("Question: " + total+"/5");
@@ -421,6 +417,7 @@ public class GeneralKnowledge extends AppCompatActivity {
                 unselectSelectedOption();
                 start.setText("Restart");
                 start.setVisibility(View.VISIBLE);
+                start.setEnabled(true);
                 start.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -440,4 +437,5 @@ public class GeneralKnowledge extends AppCompatActivity {
         unselectSelectedOption();
         Timer(60,timer);
     }
+
 }
