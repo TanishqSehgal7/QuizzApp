@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.quizzapp">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,15 +11,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Quiz.Geography"></activity>
-        <activity android:name=".Quiz.Politics" />
-        <activity android:name=".Quiz.Sports" />
-        <activity android:name=".Quiz.Technology" />
-        <activity android:name=".Quiz.History" />
-        <activity android:name=".Quiz.GeneralKnowledge" />
-        <activity android:name=".Quiz.ArtAndLiterature" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".SplashSreen">
+        <activity android:name=".Quiz.Geography"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Quiz.Politics"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Quiz.Sports"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Quiz.Technology"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Quiz.History"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Quiz.GeneralKnowledge"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Quiz.ArtAndLiterature"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".MainActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".SplashSreen"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

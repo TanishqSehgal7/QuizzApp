@@ -17,6 +17,7 @@
             android:background="#e5e5e6">
 
             <ImageView
+                android:id="@+id/category_image_score"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:src="@drawable/artandliterature"
@@ -29,14 +30,16 @@
                 android:padding="20dp">
 
             <TextView
+                android:id="@+id/category_name_socre"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Category Name"/>
 
                 <TextView
+                    android:id="@+id/previous_score"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Score of That Particular Category"/>
+                    android:text="Previous Score"/>
 
             </LinearLayout>
         </LinearLayout>

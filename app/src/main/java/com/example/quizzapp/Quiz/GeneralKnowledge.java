@@ -85,7 +85,7 @@ public class GeneralKnowledge extends AppCompatActivity {
         arrayList.add("Ques4");
         arrayList.add("Ques5");
         reference= FirebaseDatabase.getInstance().getReference().child("CATEGORIES");
-        reference_score=FirebaseDatabase.getInstance().getReference().child("Score").child("General Knowledge");
+        reference_score=FirebaseDatabase.getInstance().getReference().child("Score").child("CategoryPreviousScore").child("Category2");
 
         r1.setEnabled(false);
         r2.setEnabled(false);
@@ -125,7 +125,17 @@ public class GeneralKnowledge extends AppCompatActivity {
             getIntent().putExtra("Total Score",correct);
             getIntent().putExtra("Category Name",category_name);
             getIntent().putExtra("Category Image",R.drawable.generalknowledge);
-            reference_score.setValue(correct).addOnCompleteListener(new OnCompleteListener<Void>() {
+            reference_score.child("Previous Score").setValue(correct).addOnCompleteListener(new OnCompleteListener<Void>() {
+                @Override
+                public void onComplete(@NonNull Task<Void> task) {
+                    if (task.isSuccessful()){
+                        Toast.makeText(GeneralKnowledge.this,"Score Saved",Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(GeneralKnowledge.this,"Could'nt Save the Score",Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
+            reference_score.child("Category Name").setValue(category_name).addOnCompleteListener(new OnCompleteListener<Void>() {
                 @Override
                 public void onComplete(@NonNull Task<Void> task) {
                     if (task.isSuccessful()){
