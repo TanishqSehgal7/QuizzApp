@@ -170,7 +170,7 @@ public class GeneralKnowledge extends AppCompatActivity {
                     r1.setText(dataSnapshot.child("option1").getValue().toString());
                     r2.setText(dataSnapshot.child("option2").getValue().toString());
                     r3.setText(dataSnapshot.child("option3").getValue().toString());
-//                    r4.setText(dataSnapshot.child("option4").getValue().toString());
+                    r4.setText(dataSnapshot.child("option4").getValue().toString());
                     correctAns = dataSnapshot.child("correct").getValue().toString();
 
                     question_number.setText("Question: " + total+"/5");

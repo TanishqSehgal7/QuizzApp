@@ -7,12 +7,13 @@
     android:layout_gravity="center_vertical">
 
     <androidx.cardview.widget.CardView
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_centerHorizontal="true"
         app:cardCornerRadius="2000dp"
         app:cardElevation="20dp"
         android:elevation="20dp"
+        android:layout_marginTop="50dp"
         android:translationZ="100dp">
 
         <ImageView
@@ -45,9 +46,11 @@
             android:layout_height="wrap_content"
             android:text="Info"
             android:textSize="20sp"
+            android:paddingBottom="20dp"
             android:layout_marginStart="10dp"
             android:textColor="@color/White"
-            android:layout_marginTop="130dp"/>
+            android:layout_marginTop="100dp"
+            />
 
 <!--        <androidx.cardview.widget.CardView-->
 <!--            android:layout_width="match_parent"-->
@@ -60,7 +63,7 @@
 <!--            android:focusable="true">-->
 
 <!--            <TextView-->
-<!--                android:id="@+id/close"-->
+<!--                android:id="@+id/closeBtn"-->
 <!--                android:layout_width="match_parent"-->
 <!--                android:layout_height="match_parent"-->
 <!--                android:text="CLOSE"-->

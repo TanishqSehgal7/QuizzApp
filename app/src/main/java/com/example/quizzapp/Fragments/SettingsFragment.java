@@ -33,7 +33,6 @@ public class SettingsFragment extends Fragment {
 
     LinearLayout about;
     LinearLayout linkedin;
-    TextView close;
     TextView aboutinfo;
     LinearLayout email_the_developer;
 
@@ -77,7 +76,6 @@ public class SettingsFragment extends Fragment {
 
         about=(LinearLayout) settings.findViewById(R.id.about);
         final Dialog aboutDialog= new Dialog(Objects.requireNonNull(getActivity()));
-        close=(TextView) aboutDialog.findViewById(R.id.close);
         about.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -87,19 +85,10 @@ public class SettingsFragment extends Fragment {
                 aboutinfo.setText("QuizzApp is an android mobile application with it's source code written in Java and it's question set based on Firebase Realtime Database. " +
                         "This application lets you play quiz in various categories like Art and Literature, History, Geography, and many more. " );
                 aboutDialog.show();
-
-                Handler handler=new Handler();
-                handler.postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        aboutDialog.dismiss();
-                    }
-                },5000);
-
             }
         });
 
-        final Uri linkedin_url=Uri.parse("https://www.linkedin.com/in/ramneek-kaur-226431181");
+        final Uri linkedin_url=Uri.parse("https://www.linkedin.com/in/tanishq-sehgal-a86bbb184");
         final Uri email=Uri.parse("mailto:tsgl7246@gmail.com");
 
         linkedin=settings.findViewById(R.id.linkedin);
