@@ -125,7 +125,7 @@ public class Geography extends AppCompatActivity {
             getIntent().putExtra("Total Score",correct);
             getIntent().putExtra("Category Name",category_name);
             getIntent().putExtra("Category Image",R.drawable.geography);
-            reference_score.child("Category Name").setValue(category_name).addOnCompleteListener(new OnCompleteListener<Void>() {
+            reference_score.child("CategoryName").setValue(category_name).addOnCompleteListener(new OnCompleteListener<Void>() {
                 @Override
                 public void onComplete(@NonNull Task<Void> task) {
                     if (task.isSuccessful()){
@@ -135,7 +135,7 @@ public class Geography extends AppCompatActivity {
                     }
                 }
             });
-            reference_score.child("Previous Score").setValue(correct).addOnCompleteListener(new OnCompleteListener<Void>() {
+            reference_score.child("PreviousScore").setValue(correct).addOnCompleteListener(new OnCompleteListener<Void>() {
                 @Override
                 public void onComplete(@NonNull Task<Void> task) {
                     if (task.isSuccessful()){

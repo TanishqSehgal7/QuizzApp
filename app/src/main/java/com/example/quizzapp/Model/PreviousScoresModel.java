@@ -1,7 +1,7 @@
 package com.example.quizzapp.Model;
 
 public class PreviousScoresModel {
-    private String CategoryNameForScores;
+    private String CategoryName;
 //    private int CategoryPhotoForScores;
     private String PreviousScore;
 
@@ -9,10 +9,10 @@ public class PreviousScoresModel {
     public PreviousScoresModel(){
     }
 
-    public PreviousScoresModel(String categoryNameForScores,String previousScore){
-        CategoryNameForScores=categoryNameForScores;
-//        CategoryPhotoForScores=categoryPhotoForScores;
-        PreviousScore=previousScore;
+    public PreviousScoresModel(String CategoryName, String PreviousScore){
+        this.CategoryName=CategoryName;
+        this.PreviousScore=PreviousScore;
+
     }
 
     public String getPreviousScore() {
@@ -23,19 +23,13 @@ public class PreviousScoresModel {
         PreviousScore = previousScore;
     }
 
-//    public int getCategoryPhoto() {
-//        return CategoryPhotoForScores;
-//    }
-//
-//    public void setCategoryPhoto(int categoryPhoto) {
-//        CategoryPhotoForScores = categoryPhoto;
-//    }
-
-    public String getCategoryNameForScores() {
-        return CategoryNameForScores;
+    public void setCategoryName(String categoryName) {
+        CategoryName = categoryName;
     }
 
-    public void setCategoryNameForScores(String categoryName) {
-        CategoryNameForScores = categoryName;
+    public String getCategoryName() {
+        return CategoryName;
     }
 }
+
+

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:cardCornerRadius="10dp"
-        android:layout_margin="5dp"
+        android:layout_margin="10dp"
         android:elevation="20dp">
 
         <LinearLayout
@@ -20,7 +20,7 @@
                 android:id="@+id/category_image_score"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:src="@drawable/artandliterature"
+                android:src="@drawable/ic_baseline_history_24"
                 android:scaleType="fitXY"/>
 
             <LinearLayout
@@ -33,13 +33,15 @@
                 android:id="@+id/category_name_socre"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Category Name"/>
+                android:text="Category Name"
+                android:textColor="@color/Black"/>
 
                 <TextView
                     android:id="@+id/previous_score"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Previous Score"/>
+                    android:text="Previous Score"
+                    android:textColor="@color/Black"/>
 
             </LinearLayout>
         </LinearLayout>
