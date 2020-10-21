@@ -11,7 +11,7 @@
     <ImageView
         android:id="@+id/Imagecategory"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="220dp"
         android:scaleType="fitXY"
         android:src="@drawable/technology"
         android:transitionName="demo_transition"
@@ -24,7 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/Imagecategory"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="60dp"
         android:background="@color/Color3"
         android:foreground="?android:attr/selectableItemBackground"
         android:padding="10dp"
@@ -56,7 +56,7 @@
         android:layout_height="wrap_content"
         android:text="Score: 0"
         android:textColor="@color/White"
-        android:textSize="16sp"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.775"
@@ -70,7 +70,7 @@
         android:layout_height="wrap_content"
         android:text="Question: 1/x"
         android:textColor="@color/White"
-        android:textSize="16sp"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.870"
@@ -95,7 +95,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/Color2"
+            android:background="@drawable/round_bg"
             android:orientation="vertical"
             android:padding="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -109,8 +109,8 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
                 android:text="Question_Text"
-                android:textColor="@color/White"
-                android:textSize="24sp" />
+                android:textColor="@color/Black"
+                android:textSize="28sp" />
 
             <RadioGroup
                 android:id="@+id/rg"
@@ -125,7 +125,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
                     android:text="Option1"
-                    android:textColor="@color/White"
+                    android:textColor="@color/Black"
                     android:textSize="24sp" />
 
                 <RadioButton
@@ -134,7 +134,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
                     android:text="Option2"
-                    android:textColor="@color/White"
+                    android:textColor="@color/Black"
                     android:textSize="24sp" />
 
                 <RadioButton
@@ -143,7 +143,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
                     android:text="Option3"
-                    android:textColor="@color/White"
+                    android:textColor="@color/Black"
                     android:textSize="24sp" />
 
                 <RadioButton
@@ -152,7 +152,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
                     android:text="Option4"
-                    android:textColor="@color/White"
+                    android:textColor="@color/Black"
                     android:textSize="24sp" />
             </RadioGroup>
 
