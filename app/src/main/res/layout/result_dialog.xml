@@ -44,9 +44,11 @@
             android:layout_height="wrap_content"
             android:text="Score: "
             android:textSize="20sp"
+            android:padding="10dp"
             android:layout_marginStart="10dp"
             android:textColor="@color/White"
-            android:layout_marginTop="130dp"/>
+            android:layout_marginTop="130dp"
+            android:fontFamily="sans-serif-black"/>
 
         <TextView
             android:id="@+id/correct"
@@ -55,9 +57,11 @@
             android:layout_gravity="start"
             android:text="Correct: "
             android:textSize="20sp"
+            android:padding="10dp"
             android:layout_marginStart="10dp"
             android:textColor="@color/White"
-            android:layout_marginTop="40dp"/>
+            android:layout_marginTop="40dp"
+            android:fontFamily="sans-serif-black"/>
 
         <TextView
             android:id="@+id/wrong"
@@ -68,8 +72,9 @@
             android:textSize="20sp"
             android:layout_marginStart="10dp"
             android:textColor="@color/White"
-            android:padding="2dp"
-            android:layout_marginTop="40dp"/>
+            android:padding="10dp"
+            android:layout_marginTop="40dp"
+            android:fontFamily="sans-serif-black"/>
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
@@ -90,8 +95,9 @@
                 android:textAlignment="center"
                 android:padding="10dp"
                 android:textColor="@color/Black"
-                android:background="@color/White"
-                android:foreground="?android:attr/selectableItemBackground"/>
+                android:background="@color/Yellow"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:fontFamily="sans-serif-black" />
 
         </androidx.cardview.widget.CardView>
 
