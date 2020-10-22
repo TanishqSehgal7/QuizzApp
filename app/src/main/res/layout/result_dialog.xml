@@ -47,6 +47,7 @@
             android:padding="10dp"
             android:layout_marginStart="10dp"
             android:textColor="@color/White"
+            android:background="@drawable/white_bg_round"
             android:layout_marginTop="130dp"
             android:fontFamily="sans-serif-black"/>
 
@@ -59,6 +60,7 @@
             android:textSize="20sp"
             android:padding="10dp"
             android:layout_marginStart="10dp"
+            android:background="@drawable/white_bg_round"
             android:textColor="@color/White"
             android:layout_marginTop="40dp"
             android:fontFamily="sans-serif-black"/>
@@ -73,6 +75,7 @@
             android:layout_marginStart="10dp"
             android:textColor="@color/White"
             android:padding="10dp"
+            android:background="@drawable/white_bg_round"
             android:layout_marginTop="40dp"
             android:fontFamily="sans-serif-black"/>
 
@@ -94,8 +97,9 @@
                 android:clickable="true"
                 android:textAlignment="center"
                 android:padding="10dp"
+                android:layout_margin="5dp"
                 android:textColor="@color/Black"
-                android:background="@color/Yellow"
+                android:background="@drawable/yellow_bg_round"
                 android:foreground="?android:attr/selectableItemBackground"
                 android:fontFamily="sans-serif-black" />
 
