@@ -33,7 +33,7 @@
             android:background="@color/Color4"
             android:padding="20dp"
             android:text="QuizzApp"
-            android:textColor="@color/White"
+            android:textColor="@color/Yellow"
             android:textSize="50sp" />
 
     </androidx.cardview.widget.CardView>
