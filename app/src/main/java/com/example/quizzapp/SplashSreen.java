@@ -13,7 +13,7 @@ import com.airbnb.lottie.LottieDrawable;
 
 public class SplashSreen extends AppCompatActivity {
 
-    private  int TimeSplash=3000;
+    private  int TimeSplash=5000;
     LottieAnimationView loading;
 
     @Override
@@ -25,7 +25,7 @@ public class SplashSreen extends AppCompatActivity {
 
         loading=findViewById(R.id.loadingLottie);
         loading.playAnimation();
-        loading.setSpeed(2.0f);
+        loading.setSpeed(1.0f);
 
         new Handler().postDelayed(new Runnable() {
             @Override
